@@ -7,13 +7,16 @@ function Cart() {
   let dispatch = useDispatch();
   
   let cartItem = cart.map((item, index) => (
-    <li key={index} className="list-group-item d-flex justify-content-between align-items-center">
-      {item.name} - ₹{item.price}
+    <li key={index} className="list-group-item d-flex justify-content-between align-items-center shadow-sm mb-3">
+      <div className="d-flex flex-column">
+        <span className="fw-bold">{item.name}</span>
+        <span>₹{item.price}</span>
+      </div>
       <div>
-        <button className="btn btn-outline-primary btn-sm me-2" onClick={() => dispatch(increment(item))}>+</button>
-        <button className="btn btn-outline-primary btn-sm me-2" onClick={() => dispatch(decrement(item))}>-</button>
-        Quantity: {item.quantity}
-        <button className="btn btn-outline-danger btn-sm ms-2" onClick={() => dispatch(remove(item))}>Remove</button>
+        <button className="btn btn-outline-primary btn-sm me-2" onClick={() => dispatch(increment(item))}>➕</button>
+        <button className="btn btn-outline-primary btn-sm me-2" onClick={() => dispatch(decrement(item))}>➖</button>
+        <span className="mx-2">Qty: {item.quantity}</span>
+        <button className="btn btn-outline-danger btn-sm" onClick={() => dispatch(remove(item))}>❌</button>
       </div>
     </li>
   ));
@@ -43,7 +46,7 @@ function Cart() {
         setCouponCodeDiscountPer(40);
         break;
       default:
-        alert('Invalid coupon code');
+        alert('🚨 Invalid coupon code! Please try again.');
         setCouponCodeDiscountPer(0);
     }
   };
@@ -67,10 +70,10 @@ function Cart() {
     <>
       {cart.length > 0 ? (
         <div className="container py-5">
-          <h1 className="text-center text-warning">Your Cart</h1>
+          <h1 className="text-center text-warning mb-4">🛒 Your Cart</h1>
           <div className="card shadow-lg">
             <div className="card-body">
-              <h4 className="card-title text-center">Cart Items</h4>
+              <h4 className="card-title text-center mb-4">Cart Items</h4>
               <ul className="list-group mb-4">
                 {cartItem}
               </ul>
@@ -78,19 +81,19 @@ function Cart() {
 
               {/* Discount Section */}
               {discount > 0 && (
-                <div className="mb-3">
-                  <p>Your Discount: {discount}%</p>
+                <div className="alert alert-info mb-3">
+                  <p>Your Discount: {discount}% 🏷️</p>
                   <p>Your Discount Amount: ₹{discountAmount.toFixed(2)}</p>
                 </div>
               )}
 
-              <p className="text-info fs-5">Your Net Amount to Pay: ₹{finalAmount.toFixed(2)}</p>
+              <p className="text-info fs-5 mb-3">Your Net Amount to Pay: ₹{finalAmount.toFixed(2)}</p>
 
               <div className="d-flex justify-content-between mb-3">
-                <button className="btn btn-info" onClick={() => setDiscount(10)}>Apply 10% Discount</button>
-                <button className="btn btn-info" onClick={() => setDiscount(20)}>Apply 20% Discount</button>
-                <button className="btn btn-info" onClick={() => setDiscount(30)}>Apply 30% Discount</button>
-                <button className="btn btn-danger" onClick={() => setDiscount(0)}>Reset Discount</button>
+                <button className="btn btn-info" onClick={() => setDiscount(10)}>Apply 10% Discount 🎉</button>
+                <button className="btn btn-info" onClick={() => setDiscount(20)}>Apply 20% Discount 🎁</button>
+                <button className="btn btn-info" onClick={() => setDiscount(30)}>Apply 30% Discount 🎊</button>
+                <button className="btn btn-danger" onClick={() => setDiscount(0)}>Reset Discount 🔄</button>
               </div>
 
               {/* Coupon Code Section */}
@@ -100,28 +103,30 @@ function Cart() {
                   value={couponCode} 
                   onChange={(e) => setCouponCode(e.target.value)} 
                   className="form-control" 
-                  placeholder="Enter coupon code"
+                  placeholder="Enter coupon code 🏷️"
                 />
               </div>
-              <button className="btn btn-warning mb-3" onClick={handlingCouponCodePer}>Apply Coupon</button>
+              <button className="btn btn-warning mb-3" onClick={handlingCouponCodePer}>Apply Coupon 🧑‍💻</button>
 
               {couponDiscountAmount > 0 && (
-                <div className="mb-3">
-                  <p className="text-danger">Your Coupon Code Discount Amount: ₹{couponDiscountAmount.toFixed(2)}</p>
+                <div className="alert alert-success mb-3">
+                  <p>Your Coupon Code Discount Amount: ₹{couponDiscountAmount.toFixed(2)}</p>
                 </div>
               )}
 
-              <p className="text-success fs-5">Final Amount After Coupon: ₹{finalAmountWithCoupon.toFixed(2)}</p>
+              <p className="text-success fs-5 mb-4">Final Amount After Coupon: ₹{finalAmountWithCoupon.toFixed(2)}</p>
 
               {/* Complete Purchase Button */}
               <div className="d-flex justify-content-center">
-                <button className="btn btn-success" onClick={handleCompletePurchase}>Complete Purchase</button>
+                <button className="btn btn-success btn-lg" onClick={handleCompletePurchase}>Complete Purchase ✅</button>
               </div>
             </div>
           </div>
         </div>
       ) : (
-        <h2 className="text-center text-purple-600">Your Cart is Empty</h2>
+        <div className="container py-5 text-center">
+          <h2 className="text-danger">Your Cart is Empty 🛍️</h2>
+        </div>
       )}
     </>
   );

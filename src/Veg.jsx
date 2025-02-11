@@ -9,7 +9,7 @@ function Veg() {
   let finalitems = Vegitems.map((item, index) => (
     <div key={index} className="col-md-4 mb-4">
       <div className="card shadow-sm">
-        <img src={item.image} className="card-img-top" alt={item.name}style={{ width: "100%", height: "200px", objectFit: "cover" }} />
+        <img src={item.image} className="card-img-top" alt={item.name}style={{ width: "40%", height: "80px", objectFit: "cover" }} />
         <div className="card-body">
           <h5 className="card-title text-success">{item.name}</h5>
           <p className="card-text text-danger">Price: ${item.price}</p>
@@ -21,7 +21,7 @@ function Veg() {
 
   return (
     <>
-      <h1 className="text-center text-success my-4">🥦 Vegitable Order Items 🥦</h1>
+      <h1 className="text-center text-success my-4">🥦 Vegetable Order Items 🥦</h1>
       <div className="container">
         <div className="row">{finalitems}</div>
       </div>

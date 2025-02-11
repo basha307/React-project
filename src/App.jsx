@@ -1,18 +1,21 @@
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Home from "./Home";
-import Veg from "./Veg";
-import Nonveg from "./Nonveg";
+
+
 import Contactus from "./Contactus";
 import Order from "./Order";
 import Aboutus from "./Aboutus";
 import Milk from "./Milk";
-import Cart from "./Cart";
+
 import NotFound from "./NotFound";
 import Login from "./Login";
 import { logout } from "./Store"; // Make sure logout is exported from Store
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import Veg from "./veg";
+import Cart from "./cart";
+import Nonveg from "./nonveg";
 
 function App() {
   const cart = useSelector((state) => state.cart);

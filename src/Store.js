@@ -10,7 +10,12 @@ const productSlice = createSlice({
       { name: "Carrot", price: 100,image:"https://th.bing.com/th/id/OIP.zDlnPHZ5mb3_W-SanNkVDQHaHa?w=194&h=195&c=7&r=0&o=5&pid=1.7" },
       { name: "Bringle", price: 130 ,image:"https://th.bing.com/th/id/OIP.bXfZbIOHBaIk0CxxnCgczAHaE6?w=240&h=180&c=7&r=0&o=5&pid=1.7"},
       { name: "Cabbage", price: 150 ,image:"https://th.bing.com/th/id/OIP.2T5VNwMGJVbQlY7x0bFYYAHaE8?w=250&h=180&c=7&r=0&o=5&pid=1.7"},
-      { name: "Onion",   price: 200,image:"https://th.bing.com/th/id/OIP.KnfMNGw8opdjgqDrVD5x6AHaD4?w=334&h=180&c=7&r=0&o=5&pid=1.7" }
+      { name:"Raddish", price:120,image:"https://th.bing.com/th/id/OIP.12EAo6HBfQGQeH3zoUv-iQHaH9?w=163&h=180&c=7&r=0&o=5&pid=1.7"},
+      { name :"Dramstick" , price:40,image:"https://th.bing.com/th/id/OIP.GX--OhAyzbu2J39S4hLaKQHaG9?w=175&h=180&c=7&r=0&o=5&pid=1.7"},
+      { name:"Spinach" ,price:25, image:"https://th.bing.com/th/id/OIP.DAip9m58mVXv1nTBQYzRuAHaFy?w=240&h=187&c=7&r=0&o=5&pid=1.7"},
+      { name:"Chilli" ,price:90, image:"https://th.bing.com/th/id/OIP.bM2vlUkNbCePyU_WUEQ0oAHaHa?w=194&h=194&c=7&r=0&o=5&pid=1.7"},
+      { name:"Cucumber" , price:35, image:"https://th.bing.com/th/id/OIP.uL7wI-YlkIIWtb6OGmAy4gHaEU?w=275&h=180&c=7&r=0&o=5&pid=1.7"},
+      { name:"Garlick" ,price :160, image:"https://th.bing.com/th/id/OIP.5Lo7hPvr9V8qFPQPcKvcPgHaEo?w=279&h=180&c=7&r=0&o=5&pid=1.7"}
     ],
     Nonveg: [
       { name: "Egg", price: 20,image:"https://th.bing.com/th/id/OIP.z4Psmz7XFUCcm0A94ePxeAHaFB?w=275&h=186&c=7&r=0&o=5&pid=1.7" },
@@ -18,7 +23,11 @@ const productSlice = createSlice({
       { name: "Chicken", price: 200,image:"https://th.bing.com/th/id/OIP.8x6TJgtFcQnmyD1hJvEKJQHaE8?w=284&h=189&c=7&r=0&o=5&pid=1.7" },
       { name: "Mutton", price: 500 ,image:"https://th.bing.com/th/id/OIP.1UZSt6BwOS1pSADB6dsvpQHaFj?w=231&h=180&c=7&r=0&o=5&pid=1.7"},
       { name: "Prawns", price: 1000,image:"https://th.bing.com/th/id/OIP.cFJNJ-0VO9xk5Bip-a516wHaEJ?w=313&h=180&c=7&r=0&o=5&pid=1.7" },
-      { name: "Fried chicken",price:1200,image:"https://th.bing.com/th/id/OIP.L_GHbxdpqhu8XmtHroNcVwHaFj?w=206&h=180&c=7&r=0&o=5&pid=1.7"}
+      { name: "Fried chicken",price:1200,image:"https://th.bing.com/th/id/OIP.L_GHbxdpqhu8XmtHroNcVwHaFj?w=206&h=180&c=7&r=0&o=5&pid=1.7"},
+      { name:"Chicken 65" ,price:400,image:"https://ts3.mm.bing.net/th?id=OIP.jywuCi1RUZ6tT62Lv84KyQHaF4&pid=15.1"},
+      { name:"Chicken starters" ,price:500, image:"https://th.bing.com/th/id/OIP.DfKVNNOJTnqtBnP5wC2kPgHaEK?w=300&h=180&c=7&r=0&o=5&pid=1.7"},
+      { name:"Mutton fry" ,price: 700,image:"https://th.bing.com/th/id/OIP.UD2_6AgJ-rBhedCeCZwldQHaFW?w=219&h=180&c=7&r=0&o=5&pid=1.7"},
+      { name:" Fish recipe",price: 300,image:" https://ts1.mm.bing.net/th?id=OIP.uQAwnG9BL5hnrZOWcPLW9gHaFK&pid=15.1"}
     ],
     Milk: [
       { name: "Gayatri", price: 20,image:"https://th.bing.com/th/id/OIP.lobYocM7IXVUNorCIHcrdwHaHa?w=175&h=180&c=7&r=0&o=5&pid=1.7" },

@@ -1,21 +1,28 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-function NotFound(){
+function NotFound() {
+  const navigate = useNavigate();
 
-    const navigate=useNavigate()
-    useEffect(()=>{
-        setTimeout(()=>{
-        navigate("/Vegitable Items")
-    },7000)}
-    ,[])
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      navigate("/Home");
+    }, 5000);
 
-return(
-    <>
-    <h3 style={{color:"green"}}>404 page NotFound</h3>
-    <img style={{background:"blue"}} src="https://internetdevels.com/sites/default/files/public/blog_preview/404_page_cover.jpg"></img>
-    </>
-    )
-    }
+    // Cleanup function to clear the timeout if the component is unmounted
+    return () => clearTimeout(timeoutId);
+  }, [navigate]);
+
+  return (
+    <div style={{ textAlign: "center", marginTop: "50px" }}>
+      <h3 style={{ color: "green" }}>404 Page Not Found</h3>
+      <img
+        style={{ background: "blue", width:400,height:400}}
+        src="https://th.bing.com/th/id/OIP.3_D6Cl2xR5Fc202Yh4k5FQHaE9?w=255&h=180&c=7&r=0&o=5&pid=1.7"
+        alt="404 Not Found"
+      />
+    </div>
+  );
+}
 
 export default NotFound;
