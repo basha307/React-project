@@ -13,9 +13,9 @@ import Login from "./Login";
 import { logout } from "./Store"; // Make sure logout is exported from Store
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import Veg from "./veg";
-import Cart from "./cart";
-import Nonveg from "./nonveg";
+import Veg from "./Veg";
+import Nonveg from "./Nonveg";
+import Cart from "./Cart";
 
 function App() {
   const cart = useSelector((state) => state.cart);
